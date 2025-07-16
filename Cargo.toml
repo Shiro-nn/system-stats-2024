@@ -1,0 +1,21 @@
+[package]
+name = "system-stats"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+minreq = "2.13"
+mongodb = "3.1"
+include-crypt = "0.1.1"
+tokio = { version = "1.42", features = ["macros", "rt-multi-thread"] }
+serde = { version = "1.0", features = ["derive"] }
+chrono = "0.4"
+sysinfo = "0.33"
+
+[profile.release]
+lto = true
+opt-level = "s"
+debug = false
+panic = "abort"
+strip = "symbols"
+codegen-units = 1

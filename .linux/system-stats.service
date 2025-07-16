@@ -1,0 +1,15 @@
+[Unit]
+Description=System stats
+After=network.target
+StartLimitBurst=5
+StartLimitIntervalSec=10
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=/etc/system-stats vpn
+
+[Install]
+WantedBy=multi-user.target
